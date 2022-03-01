@@ -8,4 +8,4 @@ This project is an educational work of students of the 3rd group of the 5th team
   Иван Масловский (mail: maskovskiy.ivan@mail.ru)
   Адам Воробьёв
 
-Ссылка на на таск-ьенеджер проекта:   https://analogyoutub.atlassian.net/jira/software/projects/G3T5/boards/1
+Ссылка на на таск-менеджер проекта:   https://analogyoutub.atlassian.net/jira/software/projects/G3T5/boards/1
