@@ -6,6 +6,7 @@ This project is an educational work of students of the 3rd group of the 5th team
 Над проектом работают студенты 3 группы:
   Владимир Бондаренко (mail: vladimiruppicki@gmail.com)
   Иван Масловский (mail: maskovskiy.ivan@mail.ru)
-  Адам Воробьёв
+  Адам Воробьёв (mail: TheTargetMe@mail.ru)
 
 Ссылка на таск-менеджер проекта:   https://analogyoutub.atlassian.net/jira/software/projects/G3T5/boards/1
+Ссылка на miro: https://miro.com/app/board/uXjVOG0hSuU=/?invite_link_id=328000958046
