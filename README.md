@@ -25,11 +25,11 @@ This project is an educational work of students of the 3rd group of the 5th team
   </li>
   
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/blob/main/Kursovaya_rabota%20(1).docx">Курсовая работа</a>
+<a href="https://github.com/Group3Team5/analogyoutub/blob/main/%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0.pdf">Курсовая работа</a>
   </li>
   
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/blob/main/Prezentatsia%20(3).pptx">Презентация</a>
+<a href="https://github.com/Group3Team5/analogyoutub/blob/main/%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F.pptx">Презентация</a>
   </li>
   
 
