@@ -15,6 +15,9 @@ This project is an educational work of students of the 3rd group of the 5th team
 <ul>
   <li><a href="https://analogyoutub.atlassian.net/jira/software/projects/G3T5/boards/1">Jira</a></li>
   <li><a href="https://miro.com/app/board/uXjVOG0hSuU=/?invite_link_id=328000958046">Miro</a></li>
+  <li><a href="https://drive.google.com/file/d/1P0xPmQ_-Qddi_JYn0cfchYKsSKPhlZO6/view?usp=sharing">Видео обзор презентация</a></li>
+  <li><a href="https://drive.google.com/drive/u/0/folders/1FGbEILQOV3qhHJ9km4xhuKyQqokgtgDL">Видео обзор приложения + БД + Deploy</a></li>
+  <li><a href="https://analogyuotube.herokuapp.com/swagger/">Swagger</a></li>
 </ul>  
 
 # Документация
