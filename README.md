@@ -13,7 +13,7 @@ This project is an educational work of students of the 3rd group of the 5th team
 # Ссылки на сторонние ресурсы
 
 <ul>
-  <li><a href="https://analogyoutub.atlassian.net/jira/software/projects/G3T5/boards/1">Jira</a></li>
+  <li><a href="https://trello.com/invite/b/JnMsf9kq/ATTI60d7cfff31c8d4c6727b57888a7f546aE2A50006/youtube">Trello</a></li>
   <li><a href="https://miro.com/app/board/uXjVOG0hSuU=/?invite_link_id=328000958046">Miro</a></li>
   <li><a href="https://drive.google.com/file/d/1P0xPmQ_-Qddi_JYn0cfchYKsSKPhlZO6/view?usp=sharing">Видео обзор презентация</a></li>
   <li><a href="https://drive.google.com/drive/folders/1K_xN9kj6UjCzZn6q5kg9G9nn3Vp3rC0J?usp=sharing">Видео обзор приложения + БД + Deploy</a></li>
