@@ -32,7 +32,27 @@ class UserAPI(GenericAPIView):
 
 
 class RegAPI(GenericAPIView):
-    pass
+    serializer_class = UserRegSerializer
+
+    def post(self, request):
+        user = request.user
+
+        response = {}
+
+        if user.is_authenticated:
+            response['response'] = False
+            return Response(response, status=status.HTTP_403_FORBIDDEN)
+
+        serializer = UserRegSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            response['response'] = True
+            return Response(response, status=status.HTTP_201_CREATED)
+        else:
+            response['response'] = False
+            response['errors'] = serializer.errors
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LoginAPI(GenericAPIView):
