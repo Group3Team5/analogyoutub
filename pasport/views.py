@@ -8,16 +8,35 @@ from rest_framework.response import Response
 from .serializers import *
 
 
-class RegAPIView(GenericAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserRegSerializer
-    permission_classes = [AllowAny]
+class UserAPI(GenericAPIView):
 
     def get(self, request):
-        data = {}
-        data['response'] = True
+        user = request.user
 
-        return Response(data, status=status.HTTP_200_OK)
+        response = {}
+        user_data = {}
+
+        response['is_authenticated'] = user.is_authenticated
+
+        if user.is_authenticated:
+            user_data['id'] = user.id
+            user_data['username'] = user.name
+            user_data['email'] = user.email
+        else:
+            user_data['username'] = 'Anonymos'
+
+        response['user'] = user_data
+        response['response'] = True
+
+        return Response(response, status=status.HTTP_200_OK)
+
+
+class RegAPI(GenericAPIView):
+    pass
+
+
+class LoginAPI(GenericAPIView):
+    pass
 
 
 
