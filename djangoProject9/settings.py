@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -40,7 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'example.apps.ExampleConfig',
-    'frontend.apps.FrontendConfig'
+    'frontend.apps.FrontendConfig',
+    'pasport.apps.PasportConfig',
+
+
+
+
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -78,8 +86,30 @@ WSGI_APPLICATION = 'djangoProject9.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'f0768551_my_database',                      # Or path to database file if using sqlite3.
+        'USER': 'f0768551_my_database',                      # Not used with sqlite3.
+        'PASSWORD': 'user!',                  # Not used with sqlite3.
+        'HOST': 'f0768551.xsph.ru',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        "OPTIONS": {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES', innodb_strict_mode=1",
+        }
+        }
+}'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'tp_database',                      # Or path to database file if using sqlite3.
+        'USER': 'tp_database_user',                      # Not used with sqlite3.
+        'PASSWORD': 'EwzxGtamvOcvOmurTzR5tDQAETwCxhwr',                  # Not used with sqlite3.
+        'HOST': 'dpg-cfeqh69gp3jjseei0550-a.frankfurt-postgres.render.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+
+        }
 }
 
 

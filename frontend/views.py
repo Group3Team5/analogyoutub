@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -10,3 +11,7 @@ def redirect_window(request):
 
 def video_page(request):
     return render(request, 'frontend/video_page.html')
+
+
+def trash(request):
+    return HttpResponse(f'000000   {len(User.objects.all())}')
