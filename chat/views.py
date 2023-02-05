@@ -77,6 +77,11 @@ class MessagesAPI(GenericAPIView):
         if user.is_authenticated:
             try:
                 chat = Chat.objects.get(slug__contains=chat)
+
+                if len(chat.subscribes.filter(username=user.username)) == 0:
+                    response['response'] = False
+                    return Response(response, status=status.HTTP_403_FORBIDDEN)
+
                 response['chat'] = ChatSerializer().chat_info(chat)
                 response['messages'] = MessageSerializer().message_list(Message.objects.all().filter(chat_id=chat.id))
                 response['response'] = True
@@ -95,11 +100,14 @@ class MessagesAPI(GenericAPIView):
 
         if user.is_authenticated:
 
-            for i in request.data:
-                print(i)
+
 
             try:
                 c = Chat.objects.get(slug__contains=chat)
+
+                if len(chat.subscribes.filter(username=user.username)) == 0:
+                    response['response'] = False
+                    return Response(response, status=status.HTTP_403_FORBIDDEN)
 
                 if len(request.data['text']) > 0 and\
                         len(c.subscribes.filter(username=user.username)) == 1:
@@ -128,4 +136,27 @@ class MessagesAPI(GenericAPIView):
 
 
 class LinkAPI(GenericAPIView):
-    pass
+
+    def get(self, request, chat):
+        user = request.user
+
+        response = {}
+
+        if user.is_authenticated:
+            try:
+                chat = Chat.objects.get(slug__contains=chat)
+
+                if not (chat.creator.username == user.username):
+                    if len(chat.subscribes.filter(username=user.username)) == 0:
+                        chat.subscribes.add(user)
+                    else:
+                        chat.subscribes.remove(user)
+                    user.save()
+                    response['response'] = True
+                    return Response(response, status=status.HTTP_200_OK)
+            except:
+                response['response'] = False
+                return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        response['response'] = False
+        return Response(response, status=status.HTTP_401_UNAUTHORIZED)

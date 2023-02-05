@@ -9,5 +9,5 @@ urlpatterns = [
     path('', ChatsAPI.as_view()),
     path('<str:chat>/', ChatAPI.as_view()),
     path('<str:chat>/messages/', MessagesAPI.as_view()),
-    path('<slug>/link/', LinkAPI.as_view()),
+    path('<str:chat>/link/', LinkAPI.as_view()),
 ]
