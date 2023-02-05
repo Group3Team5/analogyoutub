@@ -42,9 +42,7 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = [
-            'text',
-            'created_date',
-            'sender'
+            'text'
         ]
 
     def message_list(self, messages, st=0):

@@ -37,7 +37,7 @@ class ChatsAPI(GenericAPIView):
                 return Response(response, status=status.HTTP_201_CREATED)
             else:
                 response['errors'] = serializer.errors
-                response['response'] = True
+                response['response'] = False
                 return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
         response['response'] = False
@@ -67,7 +67,64 @@ class ChatAPI(GenericAPIView):
 
 
 class MessagesAPI(GenericAPIView):
-    pass
+    serializer_class = MessageSerializer
+
+    def get(self, request, chat):
+        user = request.user
+
+        response = {}
+
+        if user.is_authenticated:
+            try:
+                chat = Chat.objects.get(slug__contains=chat)
+                response['chat'] = ChatSerializer().chat_info(chat)
+                response['messages'] = MessageSerializer().message_list(Message.objects.all().filter(chat_id=chat.id))
+                response['response'] = True
+                return Response(response, status=status.HTTP_200_OK)
+            except:
+                response['response'] = False
+                return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        response['response'] = False
+        return Response(response, status=status.HTTP_401_UNAUTHORIZED)
+
+    def post(self, request, chat):
+        user = request.user
+
+        response = {}
+
+        if user.is_authenticated:
+
+            for i in request.data:
+                print(i)
+
+            try:
+                c = Chat.objects.get(slug__contains=chat)
+
+                if len(request.data['text']) > 0 and\
+                        len(c.subscribes.filter(username=user.username)) == 1:
+                    message = Message.objects.create(
+                        text=request.data['text'],
+                        sender=user,
+                        chat=c
+                    )
+                    response['response'] = True
+                    return Response(response, status=status.HTTP_201_CREATED)
+                else:
+                    response['errors'] = {
+                        "text": [
+                            "This field may not be blank."
+                        ]
+                    }
+                    response['response'] = False
+                    return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+            except:
+                response['response'] = False
+                return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        response['response'] = False
+        return Response(response, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class LinkAPI(GenericAPIView):
