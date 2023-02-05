@@ -7,7 +7,7 @@ from chat.views import *
 
 urlpatterns = [
     path('', ChatsAPI.as_view()),
-    path('<slug>/', ChatAPI.as_view()),
-    path('<slug>/messages/', MessagesAPI.as_view()),
+    path('<str:chat>/', ChatAPI.as_view()),
+    path('<str:chat>/messages/', MessagesAPI.as_view()),
     path('<slug>/link/', LinkAPI.as_view()),
 ]
