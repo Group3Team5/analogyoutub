@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'example.apps.ExampleConfig',
     'frontend.apps.FrontendConfig',
     'pasport.apps.PasportConfig',
+    'chat.apps.ChatConfig',
 
 
 
