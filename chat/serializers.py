@@ -53,7 +53,7 @@ class MessageSerializer(serializers.ModelSerializer):
             c['text'] = message.text
             c['created_date'] = message.created_date
             c['sender'] = message.sender.username
-            res['message_' + str(st+number+1)] = c
+            res['message_' + str(message.id)] = c
         res['length'] = len(messages)
         return res
 

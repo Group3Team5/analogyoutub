@@ -26,6 +26,7 @@ urlpatterns = [
 
     path('back_end_api/pasport/', include('pasport.urls')),
     path('back_end_api/chat/', include('chat.urls')),
+    path('back_end_api/video/', include('video.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

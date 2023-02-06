@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'frontend.apps.FrontendConfig',
     'pasport.apps.PasportConfig',
     'chat.apps.ChatConfig',
+    'video.apps.VideoConfig',
 
 
 
