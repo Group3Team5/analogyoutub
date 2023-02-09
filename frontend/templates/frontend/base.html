@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Analog</title>
+
+    <link rel="stylesheet" href="{% static 'frontend/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/header_style.css' %}">
+</head>
+<body>
+
+<div class="header">
+    <div class="header-nav">
+        <a href="http://htmlbook.ru/css/font-family"
+            class="header-nav-link-active">
+            Видео
+        </a>
+        <a href="http://htmlbook.ru/css/font-family"
+            class="header-nav-link">
+            Чат
+        </a>
+    </div>
+
+    <div class="header-nav-end">
+        <a href="http://htmlbook.ru/css/font-family"
+            class="header-login-link">
+            Войти
+        </a>
+    </div>
+</div>
+
+<div class="content">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+
+
+</body>
+</html>
