@@ -32,7 +32,7 @@ This project is an educational work of students of the 3rd group of the 5th team
   </li>
   
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/blob/main/%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0.pdf">Курсовая работа</a>
+<a href="https://github.com/Group3Team5/analogyoutub/blob/main/Курсовая%20работа.pdf">Курсовая работа</a>
   </li>
   
   <li>
