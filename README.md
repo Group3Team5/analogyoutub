@@ -7,7 +7,7 @@ This project is an educational work of students of the 3rd group of the 5th team
 <ul>
   <li>Владимир Бондаренко (mail: vladimiruppicki@gmail.com)</li>
   <li>Иван Масловский (mail: maskovskiy.ivan@mail.ru)</li>
-  <li>Молин Дмитрий (mail: TheTargetMe@mail.ru)</li>
+  <li>Молин Дмитрий (mail: theexhausted3@gmail.com)</li>
 </ul>  
 
 # Ссылки на сторонние ресурсы
