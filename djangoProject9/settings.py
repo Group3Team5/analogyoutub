@@ -113,10 +113,10 @@ WSGI_APPLICATION = 'djangoProject9.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'tp_database',                      # Or path to database file if using sqlite3.
-        'USER': 'tp_database_user',                      # Not used with sqlite3.
-        'PASSWORD': 'EwzxGtamvOcvOmurTzR5tDQAETwCxhwr',                  # Not used with sqlite3.
-        'HOST': 'dpg-cfeqh69gp3jjseei0550-a.frankfurt-postgres.render.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'NAME': 'analogyoutube_q31r',                      # Or path to database file if using sqlite3.
+        'USER': 'analogyoutube_user',                      # Not used with sqlite3.
+        'PASSWORD': 'EHWd7G8suTg49C2C1yfAZWTMfS7tZEJQ',                  # Not used with sqlite3.
+        'HOST': 'EHWd7G8suTg49C2C1yfAZWTMfS7tZEJQ.frankfurt-postgres.render.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
 
         }
