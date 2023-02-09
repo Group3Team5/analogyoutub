@@ -1,0 +1,108 @@
+.container {
+    position: absolute;
+    display: block;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #f1f1f1;
+    padding:10px;
+    border-radius: 10px;
+
+}
+
+
+.video {
+    position: absolute;
+    height: 95%;
+    margin-top: 0;
+    padding-top: 0;
+
+    width: 95%;
+}
+.error{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.like {
+    margin: 10px;
+    margin-top: 0;
+    padding: 10px;
+    display: inline-block;
+    color: white;
+    background-color: darkgrey;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.sub {
+    margin: 10px;
+    margin-top: 0;
+    padding: 10px;
+    float: right;
+    display: inline-block;
+    color: white;
+    background-color: dimgrey;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.like:hover {
+    color: #f1f1f1;
+    background-color: #d9ca78;
+}
+.sub:hover {
+    color: #f1f1f1;
+    background-color: #d36943;
+}
+
+.open-chats-box {
+    font-family: sans-serif;
+    margin: 20px;
+    display: block;
+    border-radius: 10px;
+    font-size: 20px;
+    color: dimgrey;
+    background-color: white;
+    overflow: auto;
+}
+.send-message {
+    padding: 10px;
+    height: 20px;
+    margin: 20px;
+    font-size: 15px;
+}
+.send-btn{
+    border-radius: 15px;
+    font-family: sans-serif;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 20px;
+    color: dimgrey;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.send-btn:hover {
+    display: inline-block;
+    font-size: 20px;
+
+    background-color: dimgrey;
+    color: #f1f1f1;
+}
+.message-sender {
+    padding: 10px;
+    font-size: 16px;
+}
+.message-text {
+    margin-top: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    white-space: pre-line;
+    overflow-x: hidden;
+}
