@@ -23,7 +23,6 @@ class VideoSerializer(serializers.ModelSerializer):
             c['likes'] = video.likes.count()
             c['dislikes'] = video.dislikes.count()
             res['video_' + str(video.id)] = c
-        res['length'] = len(videos)
         return res
 
     def video_info(self, video):

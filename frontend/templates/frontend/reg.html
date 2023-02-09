@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="{% static 'frontend/css/login.css' %}">
+
+    <meta charset="UTF-8">
+    <title>Вход</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+
+<div class="registration-window">
+    <form>
+        <h2 class="text-center">Авторизация</h2>
+
+        <div class="form-group">
+            <h7>Введите ваш логин:</h7>
+            <br>
+            <input id="nameField" class="item" type="text" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="username" placeholder="Логин" required>
+        </div>
+        <div class="form-group">
+            <h7>Введите ваш email:</h7>
+            <br>
+            <input id="emailField" class="item" type="email" minlength="4" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <h7>Введите ваш пароль:</h7>
+            <br>
+            <input id="passwordField" class="item" type="password" name="Пароль" minlength="6" id="password" placeholder="Пароль" required>
+        </div>
+        <div class="form-group">
+            <h7>Повторите ваш логин:</h7>
+            <br>
+            <input id="password2Field" class="item" type="password" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="username" placeholder="Пароль" required>
+        </div>
+        <p id="errorMessage"></p>
+        <input class="create-account" type="button" value="Регистрация" onclick="doRequest()"/>
+
+    </form>
+</div>
+</body>
+<script src="{% static 'frontend/js/reg.js' %}"></script>
+</html>

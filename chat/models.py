@@ -9,7 +9,7 @@ class Chat(models.Model):
     name = models.CharField(max_length=64, unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True, default='')
-    is_private = models.BooleanField(default=True)
+    is_private = models.BooleanField(default=False)
 
     creator = models.ForeignKey(User, on_delete=models.CASCADE,
                                   related_name='creator_chat')

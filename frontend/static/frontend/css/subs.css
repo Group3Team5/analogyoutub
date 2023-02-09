@@ -1,0 +1,56 @@
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.subs-box {
+    position: absolute;
+    margin-top: 50px;
+    left: 50%;
+    margin-left: -350px;
+    width: 700px;
+    height: 80%;
+    overflow: auto;
+}
+.sub-info {
+    font-size: 20px;
+    font-family: sans-serif;
+    display: block;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.sub-info:hover {
+    background-color: #f1f1f1;
+}
+.sub {
+    padding: 10px;
+    width: 300px;
+    margin: 15px;
+    display: inline-block;
+
+    cursor: pointer;
+}
+.sub-s {
+    padding: 10px;
+    margin: 15px;
+    display: inline-block;
+}
+.sub-btn {
+    padding: 10px;
+    margin: 15px;
+    float: right;
+    display: inline-block;
+    color: white;
+    background-color: dimgrey;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    color: #f1f1f1;
+    background-color: #d36943;
+}

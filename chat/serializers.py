@@ -10,7 +10,6 @@ class ChatSerializer(serializers.ModelSerializer):
         fields = [
             'name',
             'is_private',
-            'creator',
             'slug'
         ]
 
@@ -24,7 +23,6 @@ class ChatSerializer(serializers.ModelSerializer):
             c['creator_id'] = chat.creator.username
             c['n_subscribes'] = len(chat.subscribes.all())
             res['chat_' + str(number+1)] = c
-        res['length'] = len(chats)
         return res
 
     def chat_info(self, chat):
@@ -33,7 +31,7 @@ class ChatSerializer(serializers.ModelSerializer):
         res['name'] = chat.name
         res['slug'] = chat.slug
         res['creator_id'] = chat.creator.username
-        res['n_subscribes'] = len(chat.subscribes.all())
+        res['n_subscribes'] = [u.username for u in chat.subscribes.all()]
         return res
 
 
@@ -54,7 +52,6 @@ class MessageSerializer(serializers.ModelSerializer):
             c['created_date'] = message.created_date
             c['sender'] = message.sender.username
             res['message_' + str(message.id)] = c
-        res['length'] = len(messages)
         return res
 
 

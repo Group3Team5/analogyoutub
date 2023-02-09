@@ -1,0 +1,174 @@
+.chat-panel {
+    display: block;
+    position: absolute;
+    min-width: 300px;
+    height: 90%;
+    background-color: #f1f1f1;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.btn-chat-panel {
+    display: block;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: dimgrey;
+    cursor: pointer;
+
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    padding: 10px;
+
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.btn-chat-panel:hover {
+    color: darkgray;
+    background-color: dimgrey;
+}
+
+
+.link-find-input {
+    margin: 20px;
+    width: 65%;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border-width: 1px;
+}
+.link-find-btn {
+    border-radius: 15px;
+    font-family: sans-serif;
+    padding: 10px;
+    margin: 20px;
+    display: inline-block;
+    font-size: 20px;
+    color: dimgrey;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.link-find-btn:hover {
+    margin: 20px;
+    display: inline-block;
+    font-size: 20px;
+
+    background-color: dimgrey;
+    color: #f1f1f1;
+}
+
+.open-chats-text {
+    cursor: default;
+    font-family: sans-serif;
+    margin: 20px;
+    display: block;
+    font-size: 20px;
+    color: dimgrey;
+}
+.open-chats-box {
+    font-family: sans-serif;
+    margin: 20px;
+    display: block;
+    border-radius: 10px;
+    font-size: 20px;
+    color: dimgrey;
+    background-color: white;
+    height: 600px;
+    overflow: auto;
+}
+
+.chat-info {
+    padding: 10px;
+    cursor: default;
+}
+.chat-info-name {
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px;
+}
+.chat-info-n {
+    float: right;
+    display: inline-block;
+    padding: 10px;
+}
+.chat-info-link {
+    cursor: pointer;
+    float: right;
+    display: inline-block;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 15px;
+}
+.chat-info-link:hover {
+        background-color: dimgrey;
+    color: #f1f1f1;
+}
+
+.sep {
+    margin: 0;
+    padding: 0;
+}
+
+.user-chats-box {
+    font-family: sans-serif;
+    margin: 20px;
+    display: block;
+    border-radius: 10px;
+    font-size: 20px;
+    color: dimgrey;
+    height: 780px;
+    overflow: auto;
+}
+.users-chats-username{
+    width: 180px;
+    overflow: hidden;
+    margin: 10px;
+    cursor: default;
+}
+
+.chat-chats-chatname {
+    cursor: default;
+    font-family: sans-serif;
+    margin: 20px;
+    display: block;
+    font-size: 20px;
+    color: dimgrey;
+}
+.send-message {
+    padding: 10px;
+    height: 20px;
+    margin: 20px;
+    font-size: 15px;
+}
+.send-btn{
+    border-radius: 15px;
+    font-family: sans-serif;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 20px;
+    color: dimgrey;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.send-btn:hover {
+    display: inline-block;
+    font-size: 20px;
+
+    background-color: dimgrey;
+    color: #f1f1f1;
+}
+.message-sender {
+    padding: 10px;
+    font-size: 16px;
+}
+.message-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    white-space: pre-line;
+    overflow-x: hidden;
+}

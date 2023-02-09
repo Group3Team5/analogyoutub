@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'frontend/css/header_style.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/video_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/create.css' %}">
+    <meta charset="UTF-8">
+    <title>Новое видео</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div id="menu-icon-id"
+             class="menu-icon"
+             onclick="showMenu()"
+        >
+            <img class="menu-icon-img"
+                 src="{% static 'frontend/img/menu_icon.png' %}"/>
+        </div>
+        <div class="header-nav">
+            {% if active_video %}
+            <a class="header-nav-link-active" href="/video/">Видео</a>
+                {% if user_info.is_authenticated %}
+                    <a class="header-nav-link" href="/chat/">Чат</a>
+                {% endif %}
+            {% else %}
+            <a class="header-nav-link" href="/video/">Видео</a>
+                {% if user_info.is_authenticated %}
+                    <a class="header-nav-link" href="/chat/">Чат</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="header-nav-end">
+            {% if user_info.is_authenticated %}
+
+                <div class="header-logout-link"
+                    onclick="logout()">
+                    Выйти
+                </div>
+                <div class="header-user-link"
+                     onclick="red('{{ user_info.username}}')">
+                <img src="{% static 'frontend/img/ava/default.png' %}"
+                         class="user-icon"/>
+                <div class="header-user-name">{{ user_info.username }}</div>
+                </div>
+            {% else %}
+                <a class="header-login-link" href="\login\">Войти</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="menu-id"
+         class="menu">
+        {% if user_info.is_authenticated %}
+            <a class="menu-link" href="/video/">Главная</a>
+            <a class="menu-link" href="/video/user_video/{{ user_info.username}}/">Мои видео</a>
+            <a class="menu-link" href="/video/subscribes/">Подписки</a>
+            <a class="menu-link" href="/video/likes/">Понравилось</a>
+            <a class="menu-link" href="/video/dislikes/">Не понравилось</a>
+            <a class="menu-link" href="/video/dislikes/">Не понравилось</a>
+
+            <a class="menu-link" href="/video/create/">Создать видео</a>
+        {% else %}
+            <a class="menu-link" href="/video/">Главная</a>
+        {% endif %}
+    </div>
+
+
+
+
+
+
+    <div id="subs-box-id" class="subs-box">
+            <div class="name_container">
+                <div>Название :</div>
+                <input id="video_name_field"
+                       class="input_field" placeholder="Введите название"/>
+            </div>
+
+            <div class="name_container">
+                <div>Файл :</div>
+                <input id="video_file_field"
+                       class="input_field"
+                       type="file"
+                accept=".mp4"
+                onchange="getVideo(this)"/>
+            </div>
+
+            <input class="right_btn"
+                    type="button"
+                    value="Создать"
+                    onclick="createVideo()"/>
+
+        </div>
+
+
+
+
+    <script src="{% static 'frontend/js/header.js' %}"></script>
+    <script src="{% static 'frontend/js/video_menu.js' %}"></script>
+    <script src="{% static 'frontend/js/create.js' %}"></script>
+
+</body>
+
+
+</html>

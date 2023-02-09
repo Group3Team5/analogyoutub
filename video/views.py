@@ -19,6 +19,7 @@ class VideosAPI(GenericAPIView):
             Video.objects.all()
         )
 
+
         response['response'] = True
         return Response(response, status=status.HTTP_200_OK)
 
@@ -35,10 +36,13 @@ class VideosAPI(GenericAPIView):
                 response['response'] = False
                 return Response(response, status=status.HTTP_400_BAD_REQUEST)
             elif len(Video.objects.filter(name=request.data['name']))== 0:
-                Video.objects.create(
+                v = Video.objects.create(
                     name=request.data['name'],
                     creator=user
-                ).save()
+                )
+                v.save()
+                print(v.name)
+                response['slug'] = v.slug
                 response['response'] = True
                 return Response(response, status=status.HTTP_201_CREATED)
             else:
@@ -148,6 +152,8 @@ class LikeAPI(GenericAPIView):
                     video.likes.add(user)
                 else:
                     video.likes.remove(user)
+                response['likes'] = video.likes.count()
+                response['dislikes'] = video.dislikes.count()
                 response['response'] = True
                 return Response(response, status=status.HTTP_200_OK)
 
@@ -176,6 +182,8 @@ class DislikeAPI(GenericAPIView):
                     video.dislikes.add(user)
                 else:
                     video.dislikes.remove(user)
+                response['likes'] = video.likes.count()
+                response['dislikes'] = video.dislikes.count()
                 response['response'] = True
                 return Response(response, status=status.HTTP_200_OK)
 
@@ -196,7 +204,7 @@ class SubscribeAPI(GenericAPIView):
         if user.is_authenticated:
             try:
                 subscribes = Subscribes.objects.all().filter(users=user)
-                creator = User.objects.get(username=request.data['creator'])
+                creator = User.objects.get(username=request.GET['creator'])
 
                 if len(subscribes.filter(creator=creator)) == 0:
                     Subscribes.objects.create(

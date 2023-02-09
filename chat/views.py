@@ -16,8 +16,21 @@ class ChatsAPI(GenericAPIView):
         response = {}
 
         if user.is_authenticated:
+            f = ''
+            if 'filter' in request.GET:
+                f = request.GET['filter']
+
+            chats = []
+            if f == '':
+                chats = Chat.objects.all().filter(is_private=False)
+            elif f == 'open':
+                chats = Chat.objects.all().filter(is_private=False).exclude(subscribes=user)
+            elif f == 'user':
+                chats = Chat.objects.all().filter(subscribes=user)
+
+
             response['chats'] = ChatSerializer().\
-                chat_list(Chat.objects.all().filter(is_private=False))
+                chat_list(chats)
             response['response'] = True
             return Response(response, status=status.HTTP_200_OK)
         response['response'] = False
@@ -32,7 +45,10 @@ class ChatsAPI(GenericAPIView):
             serializer = ChatSerializer(data=request.data)
 
             if serializer.is_valid():
-                serializer.save()
+                Chat.objects.create(
+                    name=request.data['name'],
+                    creator=user
+                ).save()
                 response['response'] = True
                 return Response(response, status=status.HTTP_201_CREATED)
             else:
@@ -105,10 +121,9 @@ class MessagesAPI(GenericAPIView):
             try:
                 c = Chat.objects.get(slug__contains=chat)
 
-                if len(chat.subscribes.filter(username=user.username)) == 0:
+                if not (user in c.subscribes.all()):
                     response['response'] = False
                     return Response(response, status=status.HTTP_403_FORBIDDEN)
-
                 if len(request.data['text']) > 0 and\
                         len(c.subscribes.filter(username=user.username)) == 1:
                     message = Message.objects.create(
@@ -128,6 +143,7 @@ class MessagesAPI(GenericAPIView):
                     return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
             except:
+                print(4)
                 response['response'] = False
                 return Response(response, status=status.HTTP_400_BAD_REQUEST)
 

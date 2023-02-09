@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'frontend/css/header_style.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/video_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/video_container.css' %}">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div id="menu-icon-id"
+             class="menu-icon"
+             onclick="showMenu()"
+        >
+            <img class="menu-icon-img"
+                 src="{% static 'frontend/img/menu_icon.png' %}"/>
+        </div>
+        <div class="header-nav">
+            {% if active_video %}
+            <a class="header-nav-link-active" href="/video/">Видео</a>
+                {% if user_info.is_authenticated %}
+                    <a class="header-nav-link" href="/chat/">Чат</a>
+                {% endif %}
+            {% else %}
+            <a class="header-nav-link" href="/video/">Видео</a>
+                {% if user_info.is_authenticated %}
+                    <a class="header-nav-link" href="/chat/">Чат</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="header-nav-end">
+            {% if user_info.is_authenticated %}
+
+                <div class="header-logout-link"
+                    onclick="logout()">
+                    Выйти
+                </div>
+                <div class="header-user-link"
+                     onclick="red('{{ user_info.username}}')">
+                <img src="{% static 'frontend/img/ava/default.png' %}"
+                         class="user-icon"/>
+                <div class="header-user-name">{{ user_info.username }}</div>
+                </div>
+            {% else %}
+                <a class="header-login-link" href="\login\">Войти</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="menu-id"
+         class="menu">
+        {% if user_info.is_authenticated %}
+            <a class="menu-link" href="/video/">Главная</a>
+            <a class="menu-link" href="/video/user_video/{{ user_info.username}}/">Мои видео</a>
+            <a class="menu-link" href="/video/subscribes/">Подписки</a>
+            <a class="menu-link" href="/video/likes/">Понравилось</a>
+            <a class="menu-link" href="/video/dislikes/">Не понравилось</a>
+            <a class="menu-link" href="/video/dislikes/">Не понравилось</a>
+
+            <a class="menu-link" href="/video/create/">Создать видео</a>
+        {% else %}
+            <a class="menu-link" href="/video/">Главная</a>
+        {% endif %}
+    </div>
+
+
+
+    {% if video_empty %}
+            <div class="error">Видео не существует</div>
+    {% else %}
+    <div id="video-container-id"
+         class="container">
+        <video
+              id="my-video"
+              class="video"
+              controls
+              preload="auto"
+            >
+            <source src="{% url 'stream' video.slug %}" type="video/mp4"/>
+            <source src="{% url 'stream' video.slug %}" type="video/webm"/>
+        </video>
+    </div>
+
+    <div id="comments-container-id"
+         class="container">
+        <div id="comments-box-id"
+                 class="open-chats-box">
+            {% for i in comments %}
+                  <div class ="message">
+                    <div class="message-sender">{{ i.sender }}</div>
+                    <div class="message-text">{{ i.text }}</div>
+                  </div>
+            {% endfor %}
+
+        </div>
+        {% if user_info.is_authenticated %}
+        <hr class="sep">
+        <div>
+            <input id="send-message-id"
+                   class="send-message"
+                   placeholder="Введите сообщение">
+            <div class="send-btn"
+                 onclick="send('{{ user_info.username }}',
+                         '{{ video.slug }}')">Отправить</div>
+        </div>
+            {% endif %}
+
+    </div>
+    <div id="sub-container-id"
+         class="container">
+    {% if user_info.is_authenticated %}
+        <div id="like-id"
+             class="like"
+             onclick="like('{{ video.slug }}')">Нравится: {{ likes }}</div>
+        <div id="dislike-id"
+             class="like"
+             onclick="dislike('{{ video.slug }}')">Не нравится: {{ dislikes }}</div>
+        <div id="sub-id"
+             class="sub"
+             onclick="sub('{{ creator }}')">
+            {% if sub %}
+                Отписаться
+            {% else %}
+                Подписаться
+            {% endif %}</div>
+    {% endif %}
+    </div>
+    {% endif %}
+
+
+
+
+<!--
+    <div id="container-id"
+         class="video-container">
+
+        {% if video_empty %}
+            <div class="error">Видео не существует</div>
+        {% else %}
+
+
+        <div id="comments_area_id"
+             class="comments_area">
+            <div id="comments"
+                 class="comments">
+                {% for message in comments %}
+                    <div class="comment_box">
+                        <div class="comment_a">{{ message.sender }}</div>
+                        <div class="comment">{{ message.text }}</div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            {% if user_info.is_authenticated %}
+            <hr>
+            <div id="input_id"
+                 class="input">
+                <input id="input_field_id"
+                class="input_field"/>
+                <input id="input_btn_id"
+                class="input_btn"
+                type="button"
+                value="Отправить"
+                onclick="sendMessage()"/>
+
+
+
+            </div>
+            {% endif %}
+        </div>
+--->
+
+
+        {% endif %}
+
+
+
+
+
+    <script src="{% static 'frontend/js/header.js' %}"></script>
+    <script src="{% static 'frontend/js/video_menu.js' %}"></script>
+    <script src="{% static 'frontend/js/video_page.js' %}"></script>
+
+</body>
+</html>
