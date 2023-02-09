@@ -1,0 +1,8 @@
+.content-panel {
+    position: fixed;
+    display: block;
+    margin-top: 500px;
+
+    background-color: white;
+
+}

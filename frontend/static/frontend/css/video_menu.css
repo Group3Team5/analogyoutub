@@ -1,0 +1,30 @@
+.menu {
+    z-index: 2;
+    position: fixed;
+    height: 100%;
+    margin-top: 45px;
+    margin-left: -255px;padding-top: 20px;
+    width: 250px;
+    background-color: #f1f1f1;
+    transition: 0.4s;
+    border: darkgray 2px;
+    opacity: 0.7;
+}
+.menu-link {
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: dimgray;
+    font-size: 20px;
+    font-family: sans-serif;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu-link:hover {
+    background-color: dimgray;
+    color: darkgrey;
+}
