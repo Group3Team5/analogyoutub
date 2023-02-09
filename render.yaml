@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: djangoProject9
+    databaseName: djangoProject9
+    user: djangoProject9
 
 services:
   - type: web
-    name: mysite
+    name: djangoProject9
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn djangoProject9.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: djangoProject9
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
