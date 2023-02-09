@@ -5,19 +5,23 @@ This project is an educational work of students of the 3rd group of the 5th team
 
 ## Над проектом работают студенты:
 <ul>
-  <li>Владимир Бондаренко (mail: vladimiruppicki@gmail.com)</li>
-  <li>Иван Масловский (mail: maskovskiy.ivan@mail.ru)</li>
-  <li>Молин Дмитрий (mail: theexhausted3@gmail.com)</li>
+  <li>Владимир Бондаренко (mail: vladimiruppicki@gmail.com) Back-end, Front-end</li>
+  <li>Иван Масловский (mail: maskovskiy.ivan@mail.ru) Документация</li>
+  <li>Молин Дмитрий (mail: theexhausted3@gmail.com) Front-end</li>
 </ul>  
 
 # Ссылки на сторонние ресурсы
 
 <ul>
-  <li><a href="https://trello.com/invite/b/JnMsf9kq/ATTI60d7cfff31c8d4c6727b57888a7f546aE2A50006/youtube">Trello</a></li>
+  <li><a href="https://trello.com/invite/b/pdP3O1Bi/ATTIbcfbccdb660cbf8d1e9fbcf96f81e0c370E741E3/tp">Trello</a></li>
   <li><a href="https://miro.com/app/board/uXjVOG0hSuU=/?invite_link_id=328000958046">Miro</a></li>
   <li><a href="https://drive.google.com/file/d/1P0xPmQ_-Qddi_JYn0cfchYKsSKPhlZO6/view?usp=sharing">Видео обзор презентация</a></li>
-  <li><a href="https://drive.google.com/drive/folders/1K_xN9kj6UjCzZn6q5kg9G9nn3Vp3rC0J?usp=sharing">Видео обзор приложения + БД + Deploy</a></li>
-  <li><a href="https://analogyuotube.herokuapp.com/swagger/">Swagger</a></li>
+  <li><a href="https://drive.google.com/file/d/1hBrNbRnDeiYZTc2pFQVQsL_bcydKqhTp/view?usp=sharing">Видео обзор back-end</a></li>
+  <li><a href="https://drive.google.com/file/d/1ARFJc3liscY-P2jfg4wOsPJeP8LyropH/view?usp=sharing">Видео обзор front-end</a></li>
+  <li><a href="https://drive.google.com/file/d/1I2PqBt4Ga4jrRLrgU9zlcy6S-GDc7oy1/view?usp=share_link">Видео обзор приложения</a></li>
+  <li><a href="">Видео обзор БД</a></li>
+  <li><a href="https://drive.google.com/file/d/1KbFUdevfst8841fCQnQgvrB_rt9-6HSF/view?usp=share_link">Видео обзор Deploy</a></li>
+  <li><a href="[https://](https://youtube-two-sable.vercel.app/swagger/)">Swagger</a></li>
 </ul>  
 
 # Документация
@@ -47,11 +51,11 @@ This project is an educational work of students of the 3rd group of the 5th team
   
   <ul>
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/tree/master">Код</a>
+<a href="https://github.com/Group3Team5/analogyoutub/tree/master2">Код</a>
   </li>
   
   <li>
-<a href="https://analogyuotube.herokuapp.com/">Приложение</a>
+<a href="https://youtube-two-sable.vercel.app/">Приложение</a>
   </li>
   
 
