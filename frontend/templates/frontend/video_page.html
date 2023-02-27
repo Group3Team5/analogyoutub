@@ -83,7 +83,7 @@
               id="my-video"
               class="video"
               controls
-              preload="auto"
+              preload="metadata"
             >
             <source src="{% url 'stream' video.slug %}" type="video/mp4"/>
             <source src="{% url 'stream' video.slug %}" type="video/webm"/>

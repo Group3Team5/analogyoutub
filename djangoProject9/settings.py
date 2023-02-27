@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-j!6)ld_$pi)igss1%151xkk!w(94--&735f&9%c2uxxy&i4%j7'
+SECRET_KEY = 'django-insecure-j!6)ld_$pi)igss1%151xkk!w(94--&735f&9%c2uxxy&i4%j7'
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-j!6)ld_$pi)igss1%151xkk!w(94--&735f&9%c2uxxy&i4%j7')
+#SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-j!6)ld_$pi)igss1%151xkk!w(94--&735f&9%c2uxxy&i4%j7')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,9 +33,9 @@ ALLOWED_HOSTS = ['.vercel.app',
                  '127.0.0.1']
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+'''RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)'''
 
 
 # Application definition
@@ -62,7 +62,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,6 +121,17 @@ DATABASES = {
         }
 }
 
+'''DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'neondb',
+    'USER': 'Uppicki',
+    'PASSWORD': 'NscCwpAavT74',
+    'HOST': 'ep-jolly-snow-980535.eu-central-1.aws.neon.tech',
+    'PORT': '5432',
+  }
+}'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -159,12 +169,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
+'''if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # in your application directory on Render.
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
