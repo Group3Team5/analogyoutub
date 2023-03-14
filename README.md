@@ -37,7 +37,7 @@ This project is an educational work of students of the 3rd group of the 5th team
   </li>
   
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/blob/docs/Prezentatsia_2%20(2).pptx">Презентация</a>
+<a href="https://github.com/Group3Team5/analogyoutub/blob/docs/Prezentatsia_2%20(2)%20(1).pptx">Презентация</a>
   </li>
   
 
