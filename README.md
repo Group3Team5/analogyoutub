@@ -20,6 +20,9 @@ This project is an educational work of students of the 3rd group of the 5th team
   <li><a href="https://drive.google.com/file/d/1KbFUdevfst8841fCQnQgvrB_rt9-6HSF/view?usp=share_link">Видео обзор БД</a></li>
   <li><a href="https://drive.google.com/file/d/1cvrgMck0z24U987AEHIwAVqFzXGKGlXf/view?usp=share_link">Видео обзор Deploy</a></li>
   <li><a href="https://youtube-two-sable.vercel.app/swagger/">Swagger</a></li>
+  
+  <li><a href="https://metrika.yandex.ru/settings?id=92802533&tab=common">Яндекс.Метрика</a></li>
+  
 </ul>  
 
 # Документация
@@ -39,6 +42,8 @@ This project is an educational work of students of the 3rd group of the 5th team
   
 
   </ul>
+  
+  
   
   
   # Приложение
