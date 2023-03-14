@@ -53,7 +53,10 @@ This project is an educational work of students of the 3rd group of the 5th team
   </li>
   
   <li>
-<a href="https://youtube-two-sable.vercel.app/">Приложение</a>
+<a href="https://youtube-two-sable.vercel.app/">Приложение на Vercel</a>
+  </li>
+  <li>
+<a href="https://vovav.pythonanywhere.com/">Приложение на Pythonanywhere</a>
   </li>
   
 
