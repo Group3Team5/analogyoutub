@@ -29,11 +29,11 @@ This project is an educational work of students of the 3rd group of the 5th team
 
 <ul>
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/blob/docs/Техническое%20задание.pdf">Техническое задание</a>
+<a href="https://github.com/Group3Team5/analogyoutub/blob/docs/Техническое_задание.pdf">Техническое задание</a>
   </li>
   
   <li>
-<a href="https://github.com/Group3Team5/analogyoutub/blob/docs/Курсовая.pdf">Курсовая работа</a>
+<a href="https://github.com/Group3Team5/analogyoutub/blob/docs/Курсовая_итог9.pdf">Курсовая работа</a>
   </li>
   
   <li>
